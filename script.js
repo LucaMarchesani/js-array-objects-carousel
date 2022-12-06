@@ -31,13 +31,24 @@ console.log(buttonUp);
 const buttonDown  = document.getElementById('down');
 console.log(buttonDown);
 
+const divElement = document.querySelector('div.carousel-image');
+console.log(divElement);
+
 buttonUp.addEventListener('click', function(){
-
-
-
+    for (let i  = 0; i <= images.length; i++){
+        divElement.innerHTML +=
+        `<div class="my_carousel-item">
+            <img src="/img/${images[i].image}">
+        </div>`;
+    }
 })
 
 buttonDown.addEventListener('click', function(){
+    for (let i  = images.length; i >= 0; i--){
+        console.log(images[i]);
+    
+    }
+    
 
 })
 
