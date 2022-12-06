@@ -26,28 +26,41 @@ const images = [
     }
  ];
 
-const buttonUp  = document.getElementById('up');
-console.log(buttonUp);
-const buttonDown  = document.getElementById('down');
-console.log(buttonDown);
+// prendo il pulsante previous
+const buttonPrevious  = document.querySelector('div.button.previous');
+// prendo il pulsante next
+const buttonNext  = document.querySelector('div.button.next');
+// seleziono l'elemento padre 
+const parentElement = document.querySelector('div.carousel-image');
+// creo un elemento div
+const divElement  = document.createElement('div');
+// assegno la classe al div creato
+divElement.classList.add('my_carousel-item');
+// appendo il div all'elemento padre
+parentElement.appendChild(divElement);
+// creo l'elemento img
+const imgElement = document.createElement('img');
+// appendo l'elemento img all'elemento div
+divElement.appendChild(imgElement);
+// aggiungo l'immagine all'elemento img
+imgElement.src = 'img/01.webp';
 
-const divElement = document.querySelector('div.carousel-image');
-console.log(divElement);
 
-buttonUp.addEventListener('click', function(){
-    for (let i  = 0; i <= images.length; i++){
-        divElement.innerHTML +=
-        `<div class="my_carousel-item">
-            <img src="/img/${images[i].image}">
-        </div>`;
-    }
+// creo un ciclo forte.. ora tocca capire come usarlo :(
+for (let i = 0; i < images.length; i++){
+
+    console.log(images[i]);
+
+}
+
+// creo un evento per il pulsante previous 
+buttonPrevious.addEventListener('click', function(){
+
 })
 
-buttonDown.addEventListener('click', function(){
-    for (let i  = images.length; i >= 0; i--){
-        console.log(images[i]);
-    
-    }
+// creo un evento per il pulsante next
+buttonNext.addEventListener('click', function(){
+
     
 
 })
